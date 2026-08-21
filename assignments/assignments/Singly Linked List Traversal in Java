@@ -1,0 +1,46 @@
+Program:
+
+public class TraverseNode {
+
+    static class Node {
+        int data;
+        Node next;
+
+        Node(int data) {
+            this.data = data;
+            this.next = null;
+        }
+    }
+
+    public static void traverse(Node head) {
+        if (head == null) {
+            System.out.println("The list is empty.");
+            return;
+        }
+
+        Node temp = head;
+
+        System.out.print("Linked List: ");
+
+        while (temp != null) {
+            System.out.print(temp.data + " -> ");
+            temp = temp.next;
+        }
+
+        System.out.println("NULL");
+    }
+
+    public static void main(String[] args) {
+        Node head = new Node(10);
+        head.next = new Node(20);
+        head.next.next = new Node(30);
+
+        traverse(head);
+    }
+}
+
+Output:
+
+Linked List: 10 -> 20 -> 30 -> NULL
+
+=== Code Execution Successful ===
