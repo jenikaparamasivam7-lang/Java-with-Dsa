@@ -1,0 +1,53 @@
+Program:
+
+class DNode {
+    int data;
+    DNode next;
+
+    DNode(int x) {
+        data = x;
+        next = null;
+    }
+}
+
+public class Main {
+
+    static DNode deleteNode(DNode head) {
+        if (head == null)
+            return null;
+
+        head = head.next;
+        return head;
+    }
+
+    static void printList(DNode curr) {
+        while (curr != null) {
+            System.out.print(curr.data);
+
+            if (curr.next != null) {
+                System.out.print(" -> ");
+            }
+
+            curr = curr.next;
+        }
+    }
+
+    public static void main(String[] args) {
+
+        DNode head = new DNode(8);
+        head.next = new DNode(2);
+        head.next.next = new DNode(3);
+        head.next.next.next = new DNode(1);
+        head.next.next.next.next = new DNode(7);
+
+        head = deleteNode(head);
+
+        printList(head);
+    }
+}
+
+Output:
+
+2 -> 3 -> 1 -> 7
+
+=== Code Execution Successful ===
